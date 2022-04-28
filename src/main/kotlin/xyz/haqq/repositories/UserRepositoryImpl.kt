@@ -1,6 +1,7 @@
 package xyz.haqq.repositories
 
 import xyz.haqq.pojos.CreateUserParams
+import xyz.haqq.security.JwtConfig
 import xyz.haqq.services.UserService
 import xyz.haqq.utils.BaseResponse
 
@@ -18,6 +19,9 @@ class UserRepositoryImpl(
             if (user != null) {
 
                 // TODO: generate token
+                val token = JwtConfig.instance.generateAccessToken(user.id)
+
+                user.authToken = token
                 BaseResponse.SuccessResponse(data = user)
             } else {
                 BaseResponse.ErrorResponse()

@@ -19,11 +19,7 @@ fun Application.authRoutes(repository: UserRepository) {
     post("/register") {
          val user = call.receive<CreateUserParams>()
 
-        println("haqq " + user.toString())
-
          val result = repository.registerUser(user)
-
-        println("result " + result.toString())
          call.respond(result.statusCode,result)
     }
    }

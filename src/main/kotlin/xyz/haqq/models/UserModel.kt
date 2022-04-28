@@ -6,6 +6,6 @@ data class UserModel(
     val lastName: String,
     val email: String,
     val country: String,
-    val authToken: String? = null,
+    var authToken: String? = null,
     val createdAt: String
 )
