@@ -12,7 +12,7 @@ fun Application.authRoutes(repository: UserRepository) {
   routing {
       route("/"){
           get("/"){
-              call.respondText("Hello World")
+              call.respondText("Hello World!")
           }
       }
 

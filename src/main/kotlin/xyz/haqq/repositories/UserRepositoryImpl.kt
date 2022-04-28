@@ -23,7 +23,7 @@ class UserRepositoryImpl(
                 val token = JwtConfig.instance.generateAccessToken(user.id)
 
                 user.authToken = token
-                BaseResponse.SuccessResponse(data = user)
+                BaseResponse.SuccessResponse(data = user, message = "User registered successfully")
             } else {
                 BaseResponse.ErrorResponse()
             }
@@ -37,7 +37,7 @@ class UserRepositoryImpl(
         return if (user != null) {
             val token = JwtConfig.instance.generateAccessToken(user.id)
             user.authToken = token
-            BaseResponse.SuccessResponse(data = user)
+            BaseResponse.SuccessResponse(data = user, message = "Login Success")
         } else {
             BaseResponse.ErrorResponse("Invalid email or password")
         }
