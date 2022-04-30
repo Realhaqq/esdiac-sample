@@ -14,7 +14,7 @@ import xyz.haqq.services.UserService
 import xyz.haqq.services.UserServiceImpl
 
 fun main() {
-    embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
+    embeddedServer(Netty, port = 8080, host = "https://esdiac-sample.herokuapp.com") {
         DatabaseFactory.init()
 
         install(ContentNegotiation){
