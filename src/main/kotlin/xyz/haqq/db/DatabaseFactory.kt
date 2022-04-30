@@ -13,7 +13,6 @@ import xyz.haqq.entities.UserTable
 
 object DatabaseFactory {
 
-
     fun init (){
         Database.connect(hikari())
 
