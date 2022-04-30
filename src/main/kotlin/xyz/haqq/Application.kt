@@ -14,7 +14,7 @@ import xyz.haqq.services.UserService
 import xyz.haqq.services.UserServiceImpl
 
 fun main() {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
+    embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
         DatabaseFactory.init()
 
         install(ContentNegotiation){
