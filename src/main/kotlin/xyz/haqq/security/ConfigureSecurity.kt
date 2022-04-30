@@ -2,9 +2,7 @@ package xyz.haqq.security
 
 import io.ktor.auth.*
 import io.ktor.application.*
-import io.ktor.auth.*
 import io.ktor.auth.jwt.*
-import io.ktor.features.*
 
 fun Application.configureSecurity() {
     JwtConfig.init("haqq")

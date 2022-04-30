@@ -37,8 +37,8 @@ dependencies {
     implementation("org.postgresql:postgresql:42.3.3")
     implementation("com.zaxxer:HikariCP:4.0.1")
     implementation("org.junit.jupiter:junit-jupiter:5.7.0")
-//    testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("io.ktor:ktor-server-tests:2.0.0")
+    implementation("mysql:mysql-connector-java:8.0.29")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 

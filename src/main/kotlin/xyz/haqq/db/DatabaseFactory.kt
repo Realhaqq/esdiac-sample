@@ -23,17 +23,18 @@ object DatabaseFactory {
         }
     }
 
-    private fun hikari(): HikariDataSource {
-        val config = HikariConfig()
-        config.driverClassName = "org.postgresql.Driver"
-        config.jdbcUrl = "jdbc:postgresql:haqq?user=postgres&password=Samiu987$"
-        config.maximumPoolSize = 3
-        config.isAutoCommit = false
-        config.transactionIsolation = "TRANSACTION_REPEATABLE_READ"
-        config.validate()
-        return HikariDataSource(config)
-    }
-
+     private fun hikari(): HikariDataSource {
+         val config = HikariConfig()
+         config.driverClassName = "com.mysql.cj.jdbc.Driver"
+         config.jdbcUrl = "jdbc:mysql://localhost:3306/esdiacDB?serverTimezone=UTC"
+         config.username = "root"
+         config.password = ""
+         config.maximumPoolSize = 3
+         config.isAutoCommit = false
+         config.transactionIsolation = "TRANSACTION_REPEATABLE_READ"
+         config.validate()
+         return HikariDataSource(config)
+     }
 
     suspend fun <T> dbQuery(block: () -> T): T = withContext(Dispatchers.IO) {
         transaction {
