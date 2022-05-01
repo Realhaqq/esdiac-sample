@@ -1,1 +1,1 @@
-web: ./build/install/ktor-get-started-sample/bin/ktor-get-started-sample
+web: java -cp target/dependency/*:target/classes/ org.jetbrains.ktor.netty.DevelopmentHost
