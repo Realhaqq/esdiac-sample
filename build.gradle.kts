@@ -11,6 +11,9 @@ group = "xyz.haqq"
 version = "0.0.1"
 application {
     mainClass.set("xyz.haqq.ApplicationKt")
+    tasks.create("stage") {
+        dependsOn("installDist")
+    }
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -20,9 +23,7 @@ repositories {
     mavenCentral()
 }
 
-tasks.create("stage") {
-    dependsOn("installDist")
-}
+
 
 dependencies {
     implementation("io.ktor:ktor-server-core:$ktor_version") // kotlin standard library

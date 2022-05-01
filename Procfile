@@ -1,1 +1,1 @@
-web: ./build/install/esdiac-sample/bin/esdiac-sample
+web: build/install/esdiac-sample/esdiac-sample
