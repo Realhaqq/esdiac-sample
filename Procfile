@@ -1,1 +1,1 @@
-web: ./build/install/esdiac-sample/bin/esdiac-sample
+web: ./build/install/ktor-get-started-sample/bin/ktor-get-started-sample
