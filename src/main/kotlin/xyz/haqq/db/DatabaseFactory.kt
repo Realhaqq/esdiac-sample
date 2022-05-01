@@ -25,9 +25,9 @@ object DatabaseFactory {
      private fun hikari(): HikariDataSource {
          val config = HikariConfig()
          config.driverClassName = "com.mysql.cj.jdbc.Driver"
-         config.jdbcUrl = "jdbc:mysql://localhost:3306/esdiacDB?serverTimezone=UTC"
-         config.username = "root"
-         config.password = ""
+         config.jdbcUrl = "jdbc:mysql://server.pickall.ng:3306/esdiacDB?serverTimezone=UTC"
+         config.username = "haqq"
+         config.password = "Samiu987$"
          config.maximumPoolSize = 3
          config.isAutoCommit = false
          config.transactionIsolation = "TRANSACTION_REPEATABLE_READ"
