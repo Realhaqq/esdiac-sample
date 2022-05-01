@@ -20,9 +20,8 @@ repositories {
     mavenCentral()
 }
 
-// for heroku
-tasks {
-    create("stage").dependsOn("installDist")
+tasks.create("stage") {
+    dependsOn("installDist")
 }
 
 dependencies {
