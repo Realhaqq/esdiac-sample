@@ -25,6 +25,7 @@ repositories {
 
 
 
+
 dependencies {
     implementation("io.ktor:ktor-server-core:$ktor_version") // kotlin standard library
     implementation("io.ktor:ktor-server-netty:$ktor_version") // netty engine
@@ -44,6 +45,8 @@ dependencies {
     implementation("org.junit.jupiter:junit-jupiter:5.7.0")
     testImplementation("io.ktor:ktor-server-tests:2.0.0")
     implementation("mysql:mysql-connector-java:8.0.29")
+    runtimeOnly("io.ktor:ktor-server-cors:2.0.1")
+
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
