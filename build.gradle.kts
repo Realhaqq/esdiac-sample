@@ -11,20 +11,9 @@ group = "xyz.haqq"
 version = "0.0.1"
 application {
     mainClass.set("xyz.haqq.ApplicationKt")
-    tasks.create("stage") {
-        dependsOn("installDist")
-    }
-
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
-
-//tasks.jar {
-//    manifest {
-//        attributes["Main-Class"] = "xyz.haqq.ApplicationKt"
-//    }
-//}
-
 repositories {
     mavenCentral()
 }
@@ -33,10 +22,8 @@ repositories {
 
 
 dependencies {
-    implementation("io.ktor:ktor-server-core:$ktor_version") // kotlin standard library
-    implementation("io.ktor:ktor-server-netty:$ktor_version") // netty engine
-    implementation("ch.qos.logback:logback-classic:$logback_version") // logging the request
-    // serialization
+    implementation("io.ktor:ktor-server-core:$ktor_version")
+    implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("io.ktor:ktor-serialization:$ktor_version")
     implementation("io.ktor:ktor-jackson:$ktor_version")
     implementation("io.ktor:ktor-auth:1.6.8")
@@ -46,7 +33,6 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.37.3")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.37.3")
     implementation("org.jetbrains.exposed:exposed-java-time:0.37.3")
-    implementation("org.postgresql:postgresql:42.3.3")
     implementation("com.zaxxer:HikariCP:4.0.1")
     implementation("org.junit.jupiter:junit-jupiter:5.7.0")
     testImplementation("io.ktor:ktor-server-tests:2.0.0")

@@ -15,9 +15,7 @@ import xyz.haqq.services.UserService
 import xyz.haqq.services.UserServiceImpl
 
 fun main() {
-    val port = System.getenv("PORT")?.toInt() ?: 8080
-
-    embeddedServer(Netty, port) {
+    embeddedServer(Netty, port = 8080) {
         DatabaseFactory.init()
 
         install(ContentNegotiation){
