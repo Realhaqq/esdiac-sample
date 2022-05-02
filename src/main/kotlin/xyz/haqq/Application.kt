@@ -18,21 +18,6 @@ fun main() {
     val port = System.getenv("PORT")?.toInt() ?: 8080
 
     embeddedServer(Netty, port) {
-
-        install(CORS) {
-            method(HttpMethod.Options)
-            method(HttpMethod.Put)
-            method(HttpMethod.Delete)
-            method(HttpMethod.Patch)
-            header(HttpHeaders.Authorization)
-            header(HttpHeaders.ContentType)
-            allowCredentials = true
-            allowNonSimpleContentTypes = true
-            anyHost()
-            host("localhost:3000")
-            host("172.20.10.2:3000")
-
-        }
         DatabaseFactory.init()
 
         install(ContentNegotiation){

@@ -19,11 +19,11 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
-tasks.jar {
-    manifest {
-        attributes["Main-Class"] = "xyz.haqq.ApplicationKt"
-    }
-}
+//tasks.jar {
+//    manifest {
+//        attributes["Main-Class"] = "xyz.haqq.ApplicationKt"
+//    }
+//}
 
 repositories {
     mavenCentral()
