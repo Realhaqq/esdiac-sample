@@ -26,7 +26,6 @@ fun main() {
             method(HttpMethod.Patch)
             header(HttpHeaders.Authorization)
             header(HttpHeaders.ContentType)
-            // header("any header") if you want to add any header
             allowCredentials = true
             allowNonSimpleContentTypes = true
             anyHost()
